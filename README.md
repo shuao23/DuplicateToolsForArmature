@@ -1,5 +1,5 @@
-# Duplicate Tools For Armature
-A tool for duplicating armature  
+# Duplicate Tools For Armature (Blender Plugin)
+A tool for duplicating armature 
 You can find the tool in the tool shelf in the 3d view only in **object mode** under 
 
 `Tools>Duplicate Tools for Armature`
