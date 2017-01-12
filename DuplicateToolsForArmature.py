@@ -32,8 +32,8 @@ class DuplicateArmature(bpy.types.Operator):
         bpy.ops.armature.duplicate()
         bpy.ops.armature.separate()
         objectOp.editmode_toggle()
-        bpy.ops.object.select_all(action = 'DESELECT')
-                
+        objectOp.select_all(action = 'DESELECT')
+        scene.objects.active = None
         return {'FINISHED'}
     
 class DuplicateMesh(bpy.types.Operator):
@@ -94,11 +94,10 @@ class DuplicateMesh(bpy.types.Operator):
                 if headIsEqual and tailIsEqual and keyExists:
                     mesh.vertex_groups[orgBone.name].name = newBone.name
                     break
-                    
         return
 
 class DuplicateArmatureMenu(bpy.types.Panel):
-    bl_label = "Duplicate tools for Armature"
+    bl_label = "Duplicate Tools for Armature"
     bl_space_type = "VIEW_3D"
     bl_region_type = "TOOLS"
     bl_category = "Tools"
